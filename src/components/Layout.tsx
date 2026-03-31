@@ -14,17 +14,17 @@ export default function Layout() {
             </span>
           </Link>
           <nav className="flex items-center gap-6">
+            <Link
+              to="/fundadora"
+              className="text-sm font-semibold hover:text-primary transition-colors"
+            >
+              Fundadora
+            </Link>
             <a
-              href="#unidades"
+              href="/#unidades"
               className="text-sm font-semibold hover:text-primary transition-colors"
             >
               Unidades
-            </a>
-            <a
-              href="#comunidade"
-              className="text-sm font-semibold hover:text-primary transition-colors"
-            >
-              Comunidade
             </a>
             <a
               href="https://wa.me/5541988314723"
@@ -44,7 +44,7 @@ export default function Layout() {
       </main>
 
       <footer className="bg-foreground text-background py-16">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="flex flex-col gap-6">
             <Link to="/" className="flex items-center gap-2">
               <img
@@ -60,6 +60,21 @@ export default function Layout() {
           </div>
 
           <div className="flex flex-col gap-6">
+            <h3 className="font-bold text-xl text-secondary">Navegação</h3>
+            <div className="flex flex-col gap-4 text-sm text-muted/80">
+              <Link to="/fundadora" className="hover:text-primary transition-colors font-medium">
+                Sobre a Fundadora
+              </Link>
+              <Link to="/" className="hover:text-primary transition-colors font-medium">
+                Página Inicial
+              </Link>
+              <a href="/#unidades" className="hover:text-primary transition-colors font-medium">
+                Nossas Unidades
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6">
             <h3 className="font-bold text-xl text-secondary">Nossas Unidades</h3>
             <div className="flex flex-col gap-4 text-sm text-muted/80">
               <div className="flex items-start gap-3">
@@ -68,7 +83,7 @@ export default function Layout() {
                   <strong className="text-white block mb-1">Santo Inácio</strong>
                   Rodovia Curitiba - Ponta Grossa Br-277, 2658
                   <br />
-                  (Crossfit High Pulse Matriz)
+                  (Dentro da Crossfit High Pulse Matriz)
                 </p>
               </div>
               <div className="flex items-start gap-3">
@@ -77,7 +92,7 @@ export default function Layout() {
                   <strong className="text-white block mb-1">Novo Mundo</strong>
                   Rua Deputado Waldemiro Pedroso, 201
                   <br />
-                  (Crossfit High Pulse República)
+                  (Dentro da Crossfit High Pulse República)
                 </p>
               </div>
             </div>
