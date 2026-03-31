@@ -1,85 +1,105 @@
-import { Reveal } from '@/components/ui/reveal'
-import { MapPin, Clock, ArrowRight } from 'lucide-react'
+import { MapPin, Phone, ExternalLink } from 'lucide-react'
 
 export function Location() {
+  const units = [
+    {
+      name: 'Unidade Santo Inácio',
+      addressTitle: 'ENDEREÇO 1',
+      address:
+        'Rodovia Curitiba - Ponta Grossa Br-277, 2658 - Santo Inácio, Curitiba - PR, 82305-100',
+      subtitle: '(Dentro da Crossfit High Pulse Matriz)',
+      mapUrl:
+        'https://maps.google.com/?q=Rodovia+Curitiba+-+Ponta+Grossa+Br-277,+2658+-+Santo+Inácio,+Curitiba+-+PR,+82305-100',
+      image: 'https://img.usecurling.com/p/600/400?q=modern%20gym%20facade',
+    },
+    {
+      name: 'Unidade Novo Mundo',
+      addressTitle: 'ENDEREÇO 2',
+      address: 'Rua Deputado Waldemiro Pedroso, 201 - Novo Mundo, Curitiba - PR, 81050-150',
+      subtitle: '(Dentro da Crossfit High Pulse República)',
+      mapUrl:
+        'https://maps.google.com/?q=Rua+Deputado+Waldemiro+Pedroso,+201+-+Novo+Mundo,+Curitiba+-+PR,+81050-150',
+      image: 'https://img.usecurling.com/p/600/400?q=fitness%20center%20entrance',
+    },
+  ]
+
   return (
-    <section id="contato" className="py-24 bg-white relative">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <Reveal>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-eleve-dark mb-6">
-                Pronto para elevar seu movimento?
-              </h2>
-              <p className="text-lg text-eleve-dark/70 mb-8">
-                Venha conhecer nosso estúdio em Curitiba. Um espaço pensado em cada detalhe para o
-                seu bem-estar.
-              </p>
-            </Reveal>
+    <section id="unidades" className="py-24 bg-muted/40">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            Nossas <span className="text-primary">Unidades</span>
+          </h2>
+          <p className="text-lg text-muted-foreground font-medium">
+            Estamos localizados em dois pontos estratégicos de Curitiba, com estrutura premium e
+            completa para o seu bem-estar.
+          </p>
+        </div>
 
-            <Reveal delay={200} className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-eleve-secondary flex items-center justify-center shrink-0">
-                  <MapPin className="text-eleve-primary w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-eleve-dark">Localização</h4>
-                  <p className="text-eleve-dark/70">
-                    Curitiba, PR
-                    <br />
-                    <span className="text-sm">(Endereço completo fornecido no agendamento)</span>
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-eleve-secondary flex items-center justify-center shrink-0">
-                  <Clock className="text-eleve-primary w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-eleve-dark">Horários</h4>
-                  <p className="text-eleve-dark/70">
-                    Segunda a Sexta: 07h às 21h
-                    <br />
-                    Sábados: 08h às 12h
-                  </p>
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          {units.map((unit, index) => (
+            <div
+              key={index}
+              className="bg-card rounded-3xl overflow-hidden shadow-md border border-border/50 flex flex-col group"
+            >
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src={unit.image}
+                  alt={unit.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                <div className="absolute bottom-6 left-8 right-8">
+                  <h3 className="text-3xl font-bold text-white mb-1">{unit.name}</h3>
+                  <p className="text-secondary font-medium">{unit.subtitle}</p>
                 </div>
               </div>
-            </Reveal>
 
-            <Reveal delay={400} className="pt-4">
-              <a
-                href="https://wa.link/9pxdyl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-lg px-8 py-4 w-full md:w-auto flex justify-center"
-              >
-                Agende sua experiência <ArrowRight className="w-5 h-5 ml-2" />
-              </a>
-            </Reveal>
-          </div>
+              <div className="p-8 flex flex-col flex-grow gap-8">
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3.5 rounded-2xl text-primary shrink-0">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground mb-1">{unit.addressTitle}:</h4>
+                    <p className="text-muted-foreground font-medium leading-relaxed">
+                      {unit.address} <br />
+                      {unit.subtitle}
+                    </p>
+                  </div>
+                </div>
 
-          <Reveal direction="left" delay={200} className="h-full min-h-[400px]">
-            {/* Map Placeholder - Visual representation */}
-            <div className="w-full h-full rounded-3xl overflow-hidden shadow-xl bg-gray-100 relative group">
-              <img
-                src="https://img.usecurling.com/p/800/600?q=map%20curitiba%20city"
-                alt="Mapa Curitiba"
-                className="w-full h-full object-cover filter grayscale opacity-60 mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-eleve-primary/10" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="relative flex items-center justify-center">
-                  <div className="absolute w-24 h-24 bg-eleve-primary/20 rounded-full animate-ping" />
-                  <div className="absolute w-12 h-12 bg-eleve-primary/40 rounded-full" />
-                  <MapPin
-                    className="w-8 h-8 text-eleve-primary relative z-10 drop-shadow-md"
-                    fill="currentColor"
-                  />
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3.5 rounded-2xl text-primary shrink-0">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground mb-1">Contato</h4>
+                    <a
+                      href="https://wa.me/5541988314723"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-bold text-lg"
+                    >
+                      (41) 98831-4723
+                    </a>
+                  </div>
+                </div>
+
+                <div className="mt-auto pt-6">
+                  <a
+                    href={unit.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-full gap-2 bg-secondary/20 hover:bg-secondary/30 text-secondary-foreground font-bold py-4 px-6 rounded-xl transition-colors"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    Como chegar
+                  </a>
                 </div>
               </div>
             </div>
-          </Reveal>
+          ))}
         </div>
       </div>
     </section>

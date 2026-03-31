@@ -1,54 +1,54 @@
-import { Reveal } from '@/components/ui/reveal'
-import { ArrowDown } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import heroImg from '../../assets/espaco-eleve-fe0c1.png'
+import logoImg from '../../assets/logo-eleve-photoroom-c338f.png'
 
 export function Hero() {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://img.usecurling.com/p/1920/1080?q=pilates%20studio"
-          alt="Pilates Studio Background"
+          src={heroImg}
+          alt="Studio Eleve Space"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-eleve-dark/95 via-eleve-dark/80 to-eleve-primary/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px]"></div>
       </div>
 
-      <div className="container relative z-10 px-4 md:px-6 mx-auto text-center mt-16">
-        <Reveal delay={100} direction="up">
-          <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium mb-6 tracking-wide">
-            Eleve | Pilates e Performance
-          </span>
-        </Reveal>
+      <div className="container relative z-10 mx-auto px-4 py-32 flex flex-col items-center text-center">
+        <div className="animate-fade-in-up">
+          <img
+            src={logoImg}
+            alt="Eleve Logo"
+            className="w-32 h-32 md:w-44 md:h-44 mx-auto mb-8 drop-shadow-2xl"
+          />
+        </div>
 
-        <Reveal delay={300} direction="up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-semibold text-white mb-6 leading-tight max-w-4xl mx-auto drop-shadow-lg">
-            Descubra o poder transformador do pilates!
-          </h1>
-        </Reveal>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight animate-fade-in-up [animation-delay:200ms]">
+          Studio <span className="text-secondary">Eleve</span> Pilates
+        </h1>
 
-        <Reveal delay={500} direction="up">
-          <p className="text-lg md:text-2xl text-white/90 font-light mb-10 max-w-2xl mx-auto flex items-center justify-center gap-2">
-            Eleve sua performance a um novo nível{' '}
-            <span className="text-eleve-secondary animate-pulse">✨</span>
-          </p>
-        </Reveal>
+        <p className="text-lg md:text-xl text-zinc-200 mb-10 max-w-2xl mx-auto font-medium leading-relaxed animate-fade-in-up [animation-delay:400ms]">
+          Transforme sua vida através do movimento consciente. Cuidado, consciência corporal e
+          qualidade de vida em um espaço premium feito para você.
+        </p>
 
-        <Reveal delay={700} direction="up">
+        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:600ms]">
           <a
-            href="https://wa.link/9pxdyl"
+            href="https://wa.me/5541988314723"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-lg px-8 py-4 gap-2"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-primary/90 transition-all hover:scale-105 gap-2"
           >
-            Agendar sua experiência <ArrowDown className="w-5 h-5 animate-bounce" />
+            Agende sua aula experimental
+            <ArrowRight className="w-5 h-5" />
           </a>
-        </Reveal>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-8 h-12 rounded-full border-2 border-white/30 flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-white/60 rounded-full" />
+          <a
+            href="#unidades"
+            className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md px-8 py-4 text-base font-bold text-white border border-white/20 hover:bg-white/20 transition-all"
+          >
+            Conheça as unidades
+          </a>
         </div>
       </div>
     </section>
