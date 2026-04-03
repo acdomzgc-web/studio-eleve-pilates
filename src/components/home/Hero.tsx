@@ -24,7 +24,7 @@ export function Hero() {
           />
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight animate-fade-in-up [animation-delay:200ms]">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight animate-fade-in-up [animation-delay:200ms] font-serif">
           Studio <span className="text-secondary">Eleve</span> Pilates
         </h1>
 
