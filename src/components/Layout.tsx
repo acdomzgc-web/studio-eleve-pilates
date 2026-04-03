@@ -1,149 +1,88 @@
 import { Link, Outlet } from 'react-router-dom'
-import { Instagram, MessageCircle, MapPin } from 'lucide-react'
-import logoUrl from '../assets/logo-eleve-photoroom-c338f.png'
+import { Instagram, MessageCircle } from 'lucide-react'
 
 export default function Layout() {
   return (
-    <div className="min-h-screen flex flex-col font-sans">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-20 items-center justify-between px-4">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logoUrl} alt="Studio Eleve Pilates" className="h-14 w-auto object-contain" />
-            <span className="font-bold text-xl text-primary hidden sm:inline-block">
-              Studio Eleve
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 font-sans selection:bg-orange-500/30">
+      <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-zinc-950/80 backdrop-blur-md">
+        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2 group">
+            <span className="text-2xl font-light tracking-widest text-orange-500 group-hover:text-orange-400 transition-colors">
+              ELEVE
+            </span>
+            <span className="text-sm font-light tracking-widest hidden sm:inline-block border-l border-white/20 pl-2 ml-2 text-zinc-300">
+              PILATES E PERFORMANCE
             </span>
           </Link>
-          <nav className="flex items-center gap-6">
-            <Link
-              to="/fundadora"
-              className="text-sm font-semibold hover:text-primary transition-colors"
-            >
-              Fundadora
-            </Link>
-            <a
-              href="/#servicos"
-              className="text-sm font-semibold hover:text-primary transition-colors hidden md:inline-block"
-            >
+          <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+            <a href="#sobre" className="text-zinc-300 hover:text-orange-500 transition-colors">
+              Sobre
+            </a>
+            <a href="#servicos" className="text-zinc-300 hover:text-orange-500 transition-colors">
               Serviços
             </a>
-            <a
-              href="/#planos"
-              className="text-sm font-semibold hover:text-primary transition-colors hidden md:inline-block"
-            >
+            <a href="#unidades" className="text-zinc-300 hover:text-orange-500 transition-colors">
+              Unidades
+            </a>
+            <a href="#planos" className="text-zinc-300 hover:text-orange-500 transition-colors">
               Planos
             </a>
+          </nav>
+          <div className="flex items-center gap-4">
             <a
-              href="/#unidades"
-              className="text-sm font-semibold hover:text-primary transition-colors"
+              href="https://www.instagram.com/elevestudiopilates/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-zinc-400 hover:text-orange-500 transition-colors"
             >
-              Unidades
+              <Instagram className="w-5 h-5" />
             </a>
             <a
               href="https://wa.me/5541988741221"
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-6 py-2 gap-2"
+              rel="noreferrer"
+              className="bg-orange-600 hover:bg-orange-500 text-white px-5 py-2.5 rounded-full text-sm font-medium tracking-wide flex items-center gap-2 transition-all shadow-[0_0_15px_rgba(234,88,12,0.3)] hover:shadow-[0_0_25px_rgba(234,88,12,0.5)]"
             >
               <MessageCircle className="w-4 h-4" />
-              <span className="hidden sm:inline-block">Agende sua aula</span>
+              <span className="hidden sm:inline">Contato</span>
             </a>
-          </nav>
+          </div>
         </div>
       </header>
 
-      <main className="flex-1">
+      <main>
         <Outlet />
       </main>
 
-      <footer className="bg-foreground text-background py-16">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="flex flex-col gap-6">
-            <Link to="/" className="flex items-center gap-2">
-              <img
-                src={logoUrl}
-                alt="Studio Eleve Pilates"
-                className="h-20 w-auto brightness-0 invert"
-              />
-            </Link>
-            <p className="text-sm text-muted/80 leading-relaxed max-w-xs">
-              Cuidado, consciência corporal e qualidade de vida através do Pilates em um ambiente
-              premium e acolhedor.
+      <footer className="bg-zinc-900 border-t border-white/5 py-12 mt-20">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl font-light tracking-widest text-orange-500 mb-2">ELEVE</h2>
+            <p className="text-zinc-400 text-sm font-light">
+              Pilates e Performance para uma vida com mais qualidade.
             </p>
           </div>
-
-          <div className="flex flex-col gap-6">
-            <h3 className="font-bold text-xl text-secondary">Navegação</h3>
-            <div className="flex flex-col gap-4 text-sm text-muted/80">
-              <Link to="/fundadora" className="hover:text-primary transition-colors font-medium">
-                Sobre a Fundadora
-              </Link>
-              <Link to="/" className="hover:text-primary transition-colors font-medium">
-                Página Inicial
-              </Link>
-              <a href="/#servicos" className="hover:text-primary transition-colors font-medium">
-                Serviços
-              </a>
-              <a href="/#planos" className="hover:text-primary transition-colors font-medium">
-                Planos
-              </a>
-              <a href="/#unidades" className="hover:text-primary transition-colors font-medium">
-                Nossas Unidades
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-6">
-            <h3 className="font-bold text-xl text-secondary">Nossas Unidades</h3>
-            <div className="flex flex-col gap-4 text-sm text-muted/80">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-primary" />
-                <p className="leading-relaxed">
-                  <strong className="text-white block mb-1">Santo Inácio</strong>
-                  Rodovia Curitiba - Ponta Grossa Br-277, 2658
-                  <br />
-                  (Dentro da Crossfit High Pulse Matriz)
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-primary" />
-                <p className="leading-relaxed">
-                  <strong className="text-white block mb-1">Novo Mundo</strong>
-                  Rua Deputado Waldemiro Pedroso, 201
-                  <br />
-                  (Dentro da Crossfit High Pulse República)
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-6">
-            <h3 className="font-bold text-xl text-secondary">Contato</h3>
-            <div className="flex flex-col gap-4 text-sm text-muted/80">
-              <a
-                href="https://wa.me/5541988741221"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition-colors flex items-center gap-3 font-medium"
-              >
-                <MessageCircle className="w-5 h-5" />
-                (41) 98874-1221
-              </a>
-              <a
-                href="https://www.instagram.com/elevestudiopilates/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition-colors flex items-center gap-3 font-medium"
-              >
-                <Instagram className="w-5 h-5" />
-                @elevestudiopilates
-              </a>
-            </div>
+          <div className="flex gap-4">
+            <a
+              href="https://www.instagram.com/elevestudiopilates/"
+              target="_blank"
+              rel="noreferrer"
+              className="p-3 bg-zinc-950 border border-white/10 rounded-full hover:border-orange-500 hover:text-orange-500 text-zinc-400 transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://wa.me/5541988741221"
+              target="_blank"
+              rel="noreferrer"
+              className="p-3 bg-zinc-950 border border-white/10 rounded-full hover:border-orange-500 hover:text-orange-500 text-zinc-400 transition-colors"
+            >
+              <MessageCircle className="w-5 h-5" />
+            </a>
           </div>
         </div>
-        <div className="container mx-auto px-4 mt-16 pt-8 border-t border-muted/20 text-center text-sm text-muted/60">
-          <p>
-            &copy; {new Date().getFullYear()} Studio Eleve Pilates. Todos os direitos reservados.
-          </p>
+        <div className="container mx-auto px-4 mt-8 pt-8 border-t border-white/5 text-center text-zinc-500 font-light text-xs">
+          © {new Date().getFullYear()} ELEVE Pilates e Performance. Todos os direitos reservados.
         </div>
       </footer>
     </div>

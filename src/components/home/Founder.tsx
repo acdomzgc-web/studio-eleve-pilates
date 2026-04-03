@@ -1,53 +1,55 @@
-import { Link } from 'react-router-dom'
-import claraUrl from '../../assets/clara-eleve-ded89.png'
+import fotoClara from '@/assets/foto-clara-fundadora-a7076.jpeg'
 
-export function Founder() {
+export default function Founder() {
   return (
-    <section id="clara" className="py-24 bg-muted/20">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="order-2 lg:order-1 relative animate-fade-in-up">
-            <div className="absolute -inset-4 bg-secondary/30 rounded-3xl transform rotate-3 scale-105 opacity-50 z-0"></div>
-            <img
-              src={claraUrl}
-              alt="Clara Freitas - Fundadora do Eleve Pilates"
-              className="relative z-10 w-full max-w-md mx-auto lg:max-w-none rounded-2xl shadow-2xl object-cover aspect-[4/5] md:aspect-auto md:h-[600px] object-top"
-            />
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary rounded-full mix-blend-multiply filter blur-2xl opacity-40 z-0"></div>
+    <section className="container mx-auto px-4 py-16">
+      <div className="max-w-5xl mx-auto bg-zinc-900 border border-white/5 rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+        <div className="w-full md:w-2/5 aspect-[4/5] md:aspect-auto relative">
+          <img
+            src={fotoClara}
+            alt="Clara Freitas - Fundadora"
+            className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-1000"
+          />
+        </div>
+
+        <div className="w-full md:w-3/5 p-8 md:p-14 flex flex-col justify-center">
+          <span className="text-orange-500 tracking-[0.2em] text-xs font-medium mb-3 uppercase block">
+            Fundadora & Idealizadora
+          </span>
+          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-white mb-8">
+            Clara Freitas
+          </h2>
+
+          <div className="space-y-5 text-zinc-300 font-light leading-relaxed mb-10 text-lg">
+            <p>
+              "Minha missão sempre foi olhar para cada aluno de forma única e integral. Acredito
+              profundamente que o movimento cura, educa e transforma, especialmente quando aplicado
+              com intenção, técnica e verdadeira empatia."
+            </p>
+            <p>
+              Com anos de dedicação ao estudo do movimento humano, Clara fundou a ELEVE para criar
+              um ambiente seguro onde a qualidade de vida e a performance caminham de mãos dadas,
+              oferecendo o cuidado minucioso que cada corpo merece.
+            </p>
           </div>
 
-          <div className="order-1 lg:order-2 flex flex-col justify-center">
-            <div className="animate-fade-in-up [animation-delay:100ms]">
-              <span className="text-primary font-semibold tracking-wider text-sm uppercase mb-2 block">
-                Sobre a Fundadora
+          <div className="space-y-4 pt-8 border-t border-white/10">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+              <span className="text-white font-medium text-sm w-28 shrink-0">Formação</span>
+              <span className="text-zinc-400 text-sm font-light">
+                Educação Física e Especialista em Movimento Humano
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Clara Freitas</h2>
             </div>
-
-            <div className="animate-fade-in-up [animation-delay:200ms]">
-              <div className="prose prose-lg text-muted-foreground">
-                <p className="leading-relaxed text-xl font-bold text-foreground mb-6">
-                  Mais do que ensinar exercícios, existe um propósito: ajudar pessoas a viverem com
-                  menos dor, mais consciência corporal e mais qualidade de vida.
-                </p>
-                <p className="leading-relaxed font-medium">
-                  A ELEVE nasceu desse olhar. De quem acredita que movimento também é forma de
-                  cuidar das pessoas. Cada aula é pensada para respeitar os limites e potencializar
-                  as capacidades do seu corpo.
-                </p>
-              </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+              <span className="text-white font-medium text-sm w-28 shrink-0">Registro</span>
+              <span className="text-zinc-400 text-sm font-light">CREF / PR</span>
             </div>
-
-            <div className="mt-8 animate-fade-in-up [animation-delay:300ms]">
-              <Link
-                to="/fundadora"
-                className="inline-flex items-center text-primary font-bold hover:text-primary/80 transition-colors group"
-              >
-                Conheça a história completa
-                <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </Link>
+            <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+              <span className="text-white font-medium text-sm w-28 shrink-0">Certificações</span>
+              <span className="text-zinc-400 text-sm font-light leading-relaxed">
+                Formação Completa em Pilates Clássico e Contemporâneo, Especialização em Recovery
+                Esportivo, Liberação Miofascial e Acupuntura Aplicada à Dor.
+              </span>
             </div>
           </div>
         </div>

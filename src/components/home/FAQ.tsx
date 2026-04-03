@@ -5,78 +5,62 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 
-export function FAQ() {
+export default function FAQ() {
   const faqs = [
     {
       question: 'Nunca fiz Pilates antes. Posso começar mesmo assim?',
       answer:
-        'Sim! Nossas aulas são adaptadas para todos os níveis, desde iniciantes até praticantes avançados. Realizamos uma avaliação inicial para entender suas necessidades e limites corporais.',
+        'Com certeza! Nossas aulas são cuidadosamente adaptadas para o seu nível atual. Realizamos uma avaliação prévia para entender suas necessidades, objetivos e limitações antes de iniciar qualquer prática, garantindo total segurança.',
     },
     {
-      question: 'Qual a diferença entre os planos Anual e Semestral?',
+      question: 'Como funciona o acompanhamento e recovery para atletas?',
       answer:
-        'A principal diferença está no período de fidelidade e na economia gerada. O plano Anual (12 meses) oferece uma economia de R$780/ano e permite trancar por 30 dias. O Semestral (6 meses) traz economia de R$330/ano e permite trancar por 15 dias. Ambos usam recorrência no cartão sem comprometer o limite total.',
+        'No nosso serviço de Recovery, oferecemos suporte contínuo durante treinos e acompanhamento intra campeonatos. Focamos em liberação miofascial, prevenção de lesões e na aceleração da recuperação muscular para que você alcance sua melhor performance.',
     },
     {
-      question: 'Como funciona o acompanhamento para atletas?',
+      question: 'Qual a duração média de cada aula?',
       answer:
-        'Oferecemos um serviço especializado de recovery e acompanhamento intra-campeonatos, focando na recuperação muscular, prevenção de lesões e manutenção da performance durante o período de competições.',
+        'As aulas na ELEVE têm duração de aproximadamente 55 minutos. Esse é o tempo ideal para um ciclo completo: aquecimento focado, parte principal do treino e um relaxamento ou alongamento final profundo.',
     },
     {
-      question: 'Preciso levar algum equipamento para a aula?',
+      question: 'Meu plano permite que eu frequente as duas unidades?',
       answer:
-        'Não. Nossas unidades são totalmente equipadas com os melhores aparelhos de Pilates. Recomendamos apenas que você venha com roupas confortáveis que permitam boa mobilidade e meias antiderrapantes.',
+        'Os planos são específicos para cada unidade (Matriz ou República) devido às particularidades estruturais de cada espaço. Recomendamos escolher a unidade mais conveniente para a sua rotina, mas nossa equipe está sempre à disposição para analisar casos especiais.',
     },
     {
-      question: 'Posso repor aulas caso eu falte?',
+      question: 'Como faço para agendar minha primeira aula e conhecer o espaço?',
       answer:
-        "As regras de reposição variam de acordo com a antecedência do aviso e a disponibilidade na agenda. Em nossos planos Semestral e Anual, você também tem o benefício de poder 'trancar' o plano (pausar) em caso de viagens ou imprevistos prolongados.",
+        'O processo é muito simples! Basta clicar em qualquer botão de contato no site para falar com nossa equipe pelo WhatsApp (41) 98874-1221. Nós ajudaremos a encontrar o melhor plano e horário para você.',
     },
   ]
 
   return (
-    <section className="py-24 bg-background border-t border-border/50">
-      <div className="container px-4 md:px-6 mx-auto max-w-4xl">
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Perguntas <span className="text-primary">Frequentes</span>
-          </h2>
-          <p className="text-lg text-muted-foreground font-medium">
-            Tire suas dúvidas e sinta-se seguro para dar o primeiro passo.
-          </p>
-        </div>
-
-        <div className="animate-fade-in-up [animation-delay:200ms]">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="border-b border-border/50 py-2"
-              >
-                <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-colors hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-4">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground mb-4">Ainda tem dúvidas?</p>
-          <a
-            href="https://wa.me/5541988741221"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-primary font-bold hover:underline"
-          >
-            Fale com a nossa equipe no WhatsApp →
-          </a>
-        </div>
+    <section className="container mx-auto px-4 max-w-3xl mb-24 mt-10">
+      <div className="text-center space-y-4 mb-12">
+        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-white">
+          Dúvidas Frequentes
+        </h2>
+        <p className="text-zinc-400 font-light">
+          Encontre respostas rápidas para as principais perguntas dos nossos alunos.
+        </p>
       </div>
+
+      <Accordion type="single" collapsible className="w-full space-y-4">
+        {faqs.map((faq, index) => (
+          <AccordionItem
+            key={index}
+            value={`item-${index}`}
+            className="bg-zinc-900 border border-white/5 rounded-2xl px-6 data-[state=open]:border-orange-500/30 transition-colors"
+          >
+            <AccordionTrigger className="text-white hover:text-orange-500 font-medium py-6 text-left text-lg">
+              {faq.question}
+            </AccordionTrigger>
+            <AccordionContent className="text-zinc-400 font-light leading-relaxed pb-6 text-base">
+              {faq.answer}
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </section>
   )
 }

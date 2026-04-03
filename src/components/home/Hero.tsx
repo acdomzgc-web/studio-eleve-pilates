@@ -1,53 +1,47 @@
 import { ArrowRight } from 'lucide-react'
-import heroImg from '../../assets/espaco-eleve-fe0c1.png'
-import logoImg from '../../assets/logo-eleve-photoroom-c338f.png'
 
-export function Hero() {
+export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImg}
-          alt="Studio Eleve Space"
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px]"></div>
-      </div>
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden -mt-20 pt-20">
+      <div className="absolute inset-0 bg-zinc-950/80 z-10" />
+      <div className="absolute inset-0 bg-[url('https://img.usecurling.com/p/1920/1080?q=pilates%20studio&color=black')] bg-cover bg-center bg-no-repeat opacity-40 mix-blend-luminosity" />
 
-      <div className="container relative z-10 mx-auto px-4 py-32 flex flex-col items-center text-center">
-        <div className="animate-fade-in-up">
-          <img
-            src={logoImg}
-            alt="Eleve Logo"
-            className="w-32 h-32 md:w-44 md:h-44 mx-auto mb-8 drop-shadow-2xl"
-          />
-        </div>
-
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight animate-fade-in-up [animation-delay:200ms] font-serif">
-          Studio <span className="text-secondary">Eleve</span> Pilates
+      <div className="container relative z-20 px-4 flex flex-col items-center text-center max-w-4xl mx-auto">
+        <span className="text-orange-500 tracking-[0.3em] text-sm md:text-base mb-6 font-medium animate-fade-in-up uppercase">
+          Estúdio de Pilates
+        </span>
+        <h1
+          className="text-5xl md:text-7xl font-light tracking-tight mb-8 leading-tight animate-fade-in-up text-white"
+          style={{ animationDelay: '100ms' }}
+        >
+          O movimento como forma de <span className="text-orange-500 italic">cuidar de você.</span>
         </h1>
-
-        <p className="text-lg md:text-xl text-zinc-200 mb-10 max-w-2xl mx-auto font-medium leading-relaxed animate-fade-in-up [animation-delay:400ms]">
-          Transforme sua vida através do movimento consciente. Cuidado, consciência corporal e
-          qualidade de vida em um espaço premium feito para você.
+        <p
+          className="text-lg md:text-xl text-zinc-300 mb-12 max-w-2xl font-light leading-relaxed animate-fade-in-up"
+          style={{ animationDelay: '200ms' }}
+        >
+          Mais do que ensinar exercícios, ajudamos pessoas a viverem com menos dor, mais consciência
+          corporal e mais qualidade de vida.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:600ms]">
+        <div
+          className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto animate-fade-in-up"
+          style={{ animationDelay: '300ms' }}
+        >
           <a
             href="https://wa.me/5541988741221"
             target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-primary/90 transition-all hover:scale-105 gap-2"
+            rel="noreferrer"
+            className="bg-orange-600 hover:bg-orange-500 text-white px-8 py-4 rounded-full text-base font-medium tracking-wide flex items-center justify-center gap-2 transition-all group shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)]"
           >
-            Agende sua aula experimental
-            <ArrowRight className="w-5 h-5" />
+            Agendar minha primeira aula
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="#unidades"
-            className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md px-8 py-4 text-base font-bold text-white border border-white/20 hover:bg-white/20 transition-all"
+            href="#sobre"
+            className="bg-transparent hover:bg-white/5 text-white border border-white/20 hover:border-white/40 px-8 py-4 rounded-full text-base font-medium tracking-wide flex items-center justify-center transition-all"
           >
-            Conheça as unidades
+            Conheça nossa história
           </a>
         </div>
       </div>

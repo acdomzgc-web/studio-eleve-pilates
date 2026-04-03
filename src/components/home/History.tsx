@@ -1,35 +1,27 @@
-import logoUrl from '../../assets/logo-eleve-photoroom-c338f.png'
-
-export function History() {
+export default function History() {
   return (
-    <section id="estudio" className="relative py-24 md:py-32 bg-secondary/10 overflow-hidden">
-      <img
-        src={logoUrl}
-        alt=""
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] md:w-2/3 max-w-3xl object-contain opacity-5 pointer-events-none"
-        aria-hidden="true"
-      />
+    <section id="sobre" className="container mx-auto px-4">
+      <div className="max-w-5xl mx-auto space-y-16">
+        <div className="text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-white">
+            Nossa Essência
+          </h2>
+          <div className="w-12 h-px bg-orange-500 mx-auto" />
+        </div>
 
-      <div className="container relative z-10 px-4 md:px-6 mx-auto">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="animate-fade-in-up">
-            <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-4">
-              Nossa Essência
-            </h2>
-          </div>
-
-          <div className="animate-fade-in-up [animation-delay:200ms]">
-            <p className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground leading-relaxed md:leading-tight">
-              "Por trás da ELEVE existe uma história construída com muito cuidado. Cuidado com cada
-              aluno, com cada movimento, com cada detalhe dentro do estúdio."
-            </p>
-          </div>
-
-          <div className="animate-fade-in-up [animation-delay:400ms]">
-            <div className="mt-12 flex justify-center">
-              <div className="w-24 h-1 bg-primary/20 rounded-full" />
-            </div>
-          </div>
+        <div className="grid md:grid-cols-2 gap-12 text-zinc-300 font-light leading-relaxed text-lg">
+          <p className="border-l border-white/10 pl-6">
+            Por trás da ELEVE existe uma história construída com muito cuidado. Cuidado com cada
+            aluno, com cada movimento, com cada detalhe dentro do estúdio. Mais do que ensinar
+            exercícios, existe um propósito: ajudar pessoas a viverem com menos dor, mais
+            consciência corporal e mais qualidade de vida. A ELEVE nasceu desse olhar. De quem
+            acredita que movimento também é forma de cuidar das pessoas.
+          </p>
+          <p className="border-l border-orange-500/30 pl-6">
+            Antes de cada aula, existe conversa, troca e alinhamento. Porque aqui cada movimento tem
+            intenção e cada aluno merece atenção de verdade. É assim que a gente constrói as aulas
+            da ELEVE: com cuidado e conhecimento de quem acredita no poder do movimento.
+          </p>
         </div>
       </div>
     </section>
