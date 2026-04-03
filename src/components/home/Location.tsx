@@ -76,12 +76,12 @@ export function Location() {
                   <div>
                     <h4 className="font-bold text-foreground mb-1">Contato</h4>
                     <a
-                      href="https://wa.me/5541988314723"
+                      href="https://wa.me/5541988741221"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:underline font-bold text-lg"
                     >
-                      (41) 98831-4723
+                      (41) 98874-1221
                     </a>
                   </div>
                 </div>

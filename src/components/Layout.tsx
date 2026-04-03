@@ -21,13 +21,25 @@ export default function Layout() {
               Fundadora
             </Link>
             <a
+              href="/#servicos"
+              className="text-sm font-semibold hover:text-primary transition-colors hidden md:inline-block"
+            >
+              Serviços
+            </a>
+            <a
+              href="/#planos"
+              className="text-sm font-semibold hover:text-primary transition-colors hidden md:inline-block"
+            >
+              Planos
+            </a>
+            <a
               href="/#unidades"
               className="text-sm font-semibold hover:text-primary transition-colors"
             >
               Unidades
             </a>
             <a
-              href="https://wa.me/5541988314723"
+              href="https://wa.me/5541988741221"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-6 py-2 gap-2"
@@ -68,6 +80,12 @@ export default function Layout() {
               <Link to="/" className="hover:text-primary transition-colors font-medium">
                 Página Inicial
               </Link>
+              <a href="/#servicos" className="hover:text-primary transition-colors font-medium">
+                Serviços
+              </a>
+              <a href="/#planos" className="hover:text-primary transition-colors font-medium">
+                Planos
+              </a>
               <a href="/#unidades" className="hover:text-primary transition-colors font-medium">
                 Nossas Unidades
               </a>
@@ -102,13 +120,13 @@ export default function Layout() {
             <h3 className="font-bold text-xl text-secondary">Contato</h3>
             <div className="flex flex-col gap-4 text-sm text-muted/80">
               <a
-                href="https://wa.me/5541988314723"
+                href="https://wa.me/5541988741221"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors flex items-center gap-3 font-medium"
               >
                 <MessageCircle className="w-5 h-5" />
-                (41) 98831-4723
+                (41) 98874-1221
               </a>
               <a
                 href="https://www.instagram.com/elevestudiopilates/"
