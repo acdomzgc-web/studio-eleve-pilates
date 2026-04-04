@@ -85,3 +85,5 @@ export function Location() {
     </section>
   )
 }
+
+export default Location

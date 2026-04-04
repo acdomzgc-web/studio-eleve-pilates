@@ -39,3 +39,5 @@ export function Founder() {
     </section>
   )
 }
+
+export default Founder
