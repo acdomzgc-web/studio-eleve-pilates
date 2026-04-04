@@ -1,55 +1,60 @@
-import fotoClara from '@/assets/foto-clara-fundadora-a7076.jpeg'
+import { ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import founderImg from '@/assets/foto-clara-fundadora-80944.jpeg'
 
-export default function Founder() {
+export function Founder() {
   return (
-    <section className="container mx-auto px-4 py-16">
-      <div className="max-w-5xl mx-auto bg-zinc-900 border border-white/5 rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
-        <div className="w-full md:w-2/5 aspect-[4/5] md:aspect-auto relative">
-          <img
-            src={fotoClara}
-            alt="Clara Freitas - Fundadora"
-            className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-1000"
-          />
-        </div>
-
-        <div className="w-full md:w-3/5 p-8 md:p-14 flex flex-col justify-center">
-          <span className="text-orange-500 tracking-[0.2em] text-xs font-medium mb-3 uppercase block">
-            Fundadora & Idealizadora
-          </span>
-          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-white mb-8">
-            Clara Freitas
-          </h2>
-
-          <div className="space-y-5 text-zinc-300 font-light leading-relaxed mb-10 text-lg">
-            <p>
-              "Minha missão sempre foi olhar para cada aluno de forma única e integral. Acredito
-              profundamente que o movimento cura, educa e transforma, especialmente quando aplicado
-              com intenção, técnica e verdadeira empatia."
-            </p>
-            <p>
-              Com anos de dedicação ao estudo do movimento humano, Clara fundou a ELEVE para criar
-              um ambiente seguro onde a qualidade de vida e a performance caminham de mãos dadas,
-              oferecendo o cuidado minucioso que cada corpo merece.
-            </p>
+    <section id="founder" className="py-24 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div className="w-full lg:w-1/2 relative">
+            <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl relative z-10">
+              <img
+                src={founderImg}
+                alt="Clara Freitas - Fundadora"
+                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+            {/* Decorative background elements */}
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute -top-10 -left-10 w-48 h-48 bg-secondary/50 rounded-full blur-3xl -z-10"></div>
           </div>
 
-          <div className="space-y-4 pt-8 border-t border-white/10">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-              <span className="text-white font-medium text-sm w-28 shrink-0">Formação</span>
-              <span className="text-zinc-400 text-sm font-light">
-                Educação Física e Especialista em Movimento Humano
+          <div className="w-full lg:w-1/2 flex flex-col justify-center">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <span className="w-12 h-[2px] bg-primary"></span>
+              <span className="text-primary font-medium tracking-widest uppercase text-sm">
+                Fundadora
               </span>
             </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-              <span className="text-white font-medium text-sm w-28 shrink-0">Registro</span>
-              <span className="text-zinc-400 text-sm font-light">CREF / PR</span>
+
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Clara Freitas
+            </h2>
+
+            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed mb-10">
+              <p>
+                Como fundadora do Studio Eleve Pilates, minha missão sempre foi criar um espaço onde
+                o cuidado, a consciência corporal e a qualidade de vida caminham juntos. Acredito
+                que o movimento é uma ferramenta poderosa para transformar não apenas o corpo, mas a
+                mente.
+              </p>
+              <p>
+                Nossa metodologia é focada em entender as necessidades únicas de cada aluno,
+                oferecendo um acompanhamento personalizado que respeita seus limites e potencializa
+                seus resultados. Mais do que exercícios, propomos um estilo de vida mais equilibrado
+                e saudável.
+              </p>
             </div>
-            <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-              <span className="text-white font-medium text-sm w-28 shrink-0">Certificações</span>
-              <span className="text-zinc-400 text-sm font-light leading-relaxed">
-                Formação Completa em Pilates Clássico e Contemporâneo, Especialização em Recovery
-                Esportivo, Liberação Miofascial e Acupuntura Aplicada à Dor.
-              </span>
+
+            <div>
+              <Button
+                size="lg"
+                className="rounded-full h-14 px-8 text-base shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Conheça nossa abordagem
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
             </div>
           </div>
         </div>
@@ -57,3 +62,5 @@ export default function Founder() {
     </section>
   )
 }
+
+export default Founder
