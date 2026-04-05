@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils'
-import founderImage from '@/assets/foto-clara-fundadora-e0d3f.jpeg'
 
 export function Founder() {
   return (
@@ -8,7 +7,7 @@ export function Founder() {
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl shadow-xl">
             <img
-              src={founderImage}
+              src="https://img.usecurling.com/ppl/large?gender=female&seed=clara"
               alt="Clara Freitas - Fundadora"
               className="object-cover w-full h-full"
             />

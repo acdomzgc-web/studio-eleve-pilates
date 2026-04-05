@@ -1,13 +1,13 @@
 import { MapPin, Phone, Instagram, MessageCircle } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import matrizImage from '@/assets/eleve-matriz-bc7b4.jpeg'
-import republicaImage from '@/assets/eleve-republica-753e7.jpeg'
+import matrizImage from '@/assets/eleve-matriz-7da12.jpeg'
+import republicaImage from '@/assets/eleve-republica-30e0a.jpeg'
 
 const locations = [
   {
     id: 'matriz',
-    name: 'High Pulse Matriz',
+    name: 'Santo Inácio (Eleve Matriz)',
     image: matrizImage,
     address: 'Rua Matriz Principal, 100',
     phone: '(11) 99999-9999',
@@ -16,7 +16,7 @@ const locations = [
   },
   {
     id: 'republica',
-    name: 'High Pulse República',
+    name: 'Novo Mundo (Eleve República)',
     image: republicaImage,
     address: 'Av. República, 200',
     phone: '(11) 98888-8888',
