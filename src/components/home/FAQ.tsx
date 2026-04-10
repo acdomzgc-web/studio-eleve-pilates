@@ -37,10 +37,10 @@ export default function FAQ() {
   return (
     <section className="container mx-auto px-4 max-w-3xl mb-24 mt-10">
       <div className="text-center space-y-4 mb-12">
-        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-white">
+        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
           Dúvidas Frequentes
         </h2>
-        <p className="text-zinc-400 font-light">
+        <p className="text-muted-foreground font-light">
           Encontre respostas rápidas para as principais perguntas dos nossos alunos.
         </p>
       </div>
@@ -50,12 +50,12 @@ export default function FAQ() {
           <AccordionItem
             key={index}
             value={`item-${index}`}
-            className="bg-zinc-900 border border-white/5 rounded-2xl px-6 data-[state=open]:border-orange-500/30 transition-colors"
+            className="bg-card border border-border rounded-2xl px-6 data-[state=open]:border-primary/30 transition-colors shadow-sm"
           >
-            <AccordionTrigger className="text-white hover:text-orange-500 font-medium py-6 text-left text-lg">
+            <AccordionTrigger className="text-foreground hover:text-primary font-medium py-6 text-left text-lg">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="text-zinc-400 font-light leading-relaxed pb-6 text-base">
+            <AccordionContent className="text-muted-foreground font-light leading-relaxed pb-6 text-base">
               {faq.answer}
             </AccordionContent>
           </AccordionItem>

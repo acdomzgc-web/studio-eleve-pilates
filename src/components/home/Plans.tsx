@@ -35,13 +35,13 @@ export default function Plans() {
   ]
 
   return (
-    <section id="planos" className="bg-zinc-900/50 py-24 border-y border-white/5">
+    <section id="planos" className="bg-muted/30 py-24 border-y">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-white">
+          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
             Nossos Planos
           </h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto font-light">
+          <p className="text-muted-foreground max-w-2xl mx-auto font-light">
             Valores sob consulta. Entre em contato com a unidade de sua preferência para descobrir
             as condições ideais para você.
           </p>
@@ -53,25 +53,30 @@ export default function Plans() {
               key={plan.name}
               className={`rounded-3xl p-8 border ${
                 plan.highlight
-                  ? 'bg-zinc-900 border-orange-500/50 shadow-[0_0_30px_rgba(249,115,22,0.1)] relative transform md:-translate-y-4'
-                  : 'bg-zinc-950 border-white/10'
+                  ? 'bg-card border-primary/50 shadow-[0_0_30px_rgba(249,115,22,0.1)] relative transform md:-translate-y-4'
+                  : 'bg-card border-border shadow-sm'
               }`}
             >
               {plan.highlight && (
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
                   Mais Escolhido
                 </span>
               )}
 
-              <h3 className="text-2xl font-light tracking-wide text-white mb-4">{plan.name}</h3>
-              <p className="text-zinc-400 font-light text-sm h-20 mb-8 leading-relaxed">
+              <h3 className="text-2xl font-light tracking-wide text-foreground mb-4">
+                {plan.name}
+              </h3>
+              <p className="text-muted-foreground font-light text-sm h-20 mb-8 leading-relaxed">
                 {plan.description}
               </p>
 
               <ul className="space-y-4 mb-10 min-h-[160px]">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3 text-zinc-300 font-light text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 text-muted-foreground font-light text-sm"
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                     {feature}
                   </li>
                 ))}
@@ -83,8 +88,8 @@ export default function Plans() {
                 rel="noreferrer"
                 className={`w-full flex items-center justify-center gap-2 py-4 rounded-full text-sm font-medium tracking-wide transition-all ${
                   plan.highlight
-                    ? 'bg-orange-600 hover:bg-orange-500 text-white shadow-lg'
-                    : 'bg-white/5 hover:bg-white/10 text-white border border-white/10'
+                    ? 'bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg'
+                    : 'bg-secondary hover:bg-secondary/80 text-secondary-foreground border border-border'
                 }`}
               >
                 Consultar Valores
