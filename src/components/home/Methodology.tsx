@@ -23,7 +23,7 @@ const PILLARS = [
 
 export function Methodology() {
   return (
-    <section id="metodo" className="py-24 md:py-32 bg-white">
+    <section id="metodo" className="py-24 md:py-40 bg-beige">
       <div className="container mx-auto px-4">
         <div className="mb-16 md:mb-24 flex flex-col items-center text-center max-w-2xl mx-auto">
           <span className="text-terracotta tracking-[0.2em] text-xs font-medium mb-4 block uppercase animate-fade-in-up">
@@ -56,10 +56,10 @@ export function Methodology() {
             {PILLARS.map((pillar, index) => (
               <div
                 key={pillar.title}
-                className="group flex flex-col sm:flex-row items-start gap-6 p-8 bg-beige/30 hover:bg-beige transition-colors duration-500 border border-transparent hover:border-beige/50 hover:shadow-xl animate-fade-in-up"
+                className="group flex flex-col sm:flex-row items-start gap-6 p-8 lg:p-10 bg-white hover:bg-white/95 transition-all duration-500 shadow-sm hover:shadow-xl animate-fade-in-up hover:-translate-y-1 border border-transparent"
                 style={{ animationDelay: `${(index + 2) * 150}ms` }}
               >
-                <div className="w-14 h-14 shrink-0 rounded-none bg-white flex items-center justify-center border border-terracotta/20 group-hover:border-terracotta transition-colors duration-500">
+                <div className="w-14 h-14 shrink-0 rounded-none bg-beige/50 flex items-center justify-center border border-terracotta/20 group-hover:border-terracotta transition-colors duration-500">
                   <pillar.icon className="w-6 h-6 text-terracotta" strokeWidth={1.5} />
                 </div>
                 <div className="space-y-3">

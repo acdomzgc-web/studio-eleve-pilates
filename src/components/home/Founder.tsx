@@ -14,7 +14,7 @@ export default function Founder() {
                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                 onError={(e) => {
                   ;(e.target as HTMLImageElement).src =
-                    'https://img.usecurling.com/p/800/1000?q=woman%20pilates%20reformer'
+                    'https://img.usecurling.com/p/800/1000?q=woman%20leaning%20reformer%20neon%20sign'
                 }}
               />
               <div className="absolute inset-0 bg-moss/10 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0" />

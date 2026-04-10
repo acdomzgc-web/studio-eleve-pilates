@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('https://img.usecurling.com/p/1920/1080?q=woman%20pilates%20reformer')] bg-cover bg-center bg-no-repeat" />
+      <div className="absolute inset-0 bg-[url('https://img.usecurling.com/p/1920/1080?q=woman%20smiling%20pilates%20reformer%20studio')] bg-cover bg-center bg-no-repeat" />
 
       {/* Moss-green overlay 60% */}
       <div className="absolute inset-0 bg-moss/60 z-10" />
@@ -29,14 +29,14 @@ export default function Hero() {
             href="https://wa.me/5541988741221"
             target="_blank"
             rel="noreferrer"
-            className="bg-terracotta hover:bg-[#A85525] text-white px-10 py-5 text-sm uppercase tracking-[0.15em] font-medium flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1"
+            className="bg-terracotta hover:bg-[#A85525] text-white px-10 py-5 text-sm uppercase tracking-[0.15em] font-medium flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-terracotta/20"
           >
             Agendar minha primeira aula
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
             href="#sobre"
-            className="bg-transparent hover:bg-white/10 text-white border border-white/30 hover:border-white px-10 py-5 text-sm uppercase tracking-[0.15em] font-medium flex items-center justify-center transition-all duration-300"
+            className="bg-transparent hover:bg-white/10 text-white border border-white/30 hover:border-white px-10 py-5 text-sm uppercase tracking-[0.15em] font-medium flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
           >
             Conheça nossa história
           </a>

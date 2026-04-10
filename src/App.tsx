@@ -14,7 +14,7 @@ function App() {
     }
     // Set favicon to the Eleve logo SVG dynamically
     link.href =
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><path d='M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z' stroke='%23C2622A' stroke-width='1.5' stroke-linejoin='round'/><path d='M16 7L6 12.5V19.5L16 25L26 19.5V12.5L16 7Z' stroke='%23C2622A' stroke-width='1.5' stroke-linejoin='round' stroke-dasharray='2 2' opacity='0.7'/><circle cx='16' cy='16' r='3' fill='%23C2622A'/></svg>"
+      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><circle cx='16' cy='16' r='16' fill='%23F5F0EA'/><g transform='translate(3.2, 3.2) scale(0.8)'><path d='M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z' stroke='%23C2622A' stroke-width='1.5' stroke-linejoin='round'/><path d='M16 7L6 12.5V19.5L16 25L26 19.5V12.5L16 7Z' stroke='%23C2622A' stroke-width='1.5' stroke-linejoin='round' stroke-dasharray='2 2' opacity='0.7'/><circle cx='16' cy='16' r='3' fill='%23C2622A'/></g></svg>"
   }, [])
 
   return (
