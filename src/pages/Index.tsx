@@ -8,19 +8,21 @@ import Plans from '@/components/home/Plans'
 import Founder from '@/components/home/Founder'
 import FAQ from '@/components/home/FAQ'
 import Metrics from '@/components/home/Metrics'
+import QuoteSection from '@/components/home/QuoteSection'
 
 export default function Index() {
   return (
-    <div className="flex flex-col gap-24 pb-12">
+    <div className="flex flex-col">
       <Hero />
-      <History />
+      <Founder />
+      <QuoteSection />
       <Methodology />
       <Metrics />
+      <History />
       <Services />
       <Benefits />
       <Location />
       <Plans />
-      <Founder />
       <FAQ />
     </div>
   )

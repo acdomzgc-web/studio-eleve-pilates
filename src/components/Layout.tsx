@@ -1,20 +1,36 @@
 import { Link, Outlet } from 'react-router-dom'
 import { Instagram, MessageCircle } from 'lucide-react'
-import { ThemeToggle } from './ThemeToggle'
+import { useState, useEffect } from 'react'
+import { cn } from '@/lib/utils'
 
 export default function Layout() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 flex flex-col">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+    <div className="min-h-screen bg-beige text-dark-brown font-sans flex flex-col selection:bg-terracotta/30">
+      <header
+        className={cn(
+          'fixed top-0 z-50 w-full transition-all duration-500 border-b border-transparent',
+          isScrolled ? 'bg-moss text-beige shadow-lg py-3' : 'bg-transparent text-white py-6',
+        )}
+      >
+        <div className="container mx-auto px-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <svg
-              width="28"
-              height="28"
+              width="44"
+              height="44"
               viewBox="0 0 32 32"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="text-primary transition-transform group-hover:scale-105"
+              className="text-terracotta transition-transform duration-500 group-hover:scale-105"
             >
               <path
                 d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z"
@@ -32,43 +48,42 @@ export default function Layout() {
               />
               <circle cx="16" cy="16" r="3" fill="currentColor" />
             </svg>
-            <span className="text-2xl font-light tracking-widest text-primary group-hover:text-primary/80 transition-colors">
-              ELEVE
-            </span>
-            <span className="text-sm font-light tracking-widest hidden sm:inline-block border-l border-border pl-3 ml-1 text-muted-foreground">
-              PILATES E PERFORMANCE
-            </span>
+            <div className="flex flex-col">
+              <span className="text-xl md:text-2xl font-serif tracking-[0.15em] transition-colors">
+                ELEVE
+              </span>
+              <span
+                className={cn(
+                  'text-[0.6rem] uppercase tracking-[0.2em] font-light transition-colors',
+                  isScrolled ? 'text-beige/70' : 'text-white/70',
+                )}
+              >
+                Pilates e Performance
+              </span>
+            </div>
           </Link>
-          <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
-            <a href="#sobre" className="text-muted-foreground hover:text-primary transition-colors">
+
+          <nav className="hidden md:flex items-center gap-10 text-xs uppercase tracking-[0.15em] font-medium">
+            <a href="#sobre" className="hover:text-terracotta transition-colors">
               Sobre
             </a>
-            <a
-              href="#servicos"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Serviços
+            <a href="#metodo" className="hover:text-terracotta transition-colors">
+              Método
             </a>
-            <a
-              href="#unidades"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
+            <a href="#unidades" className="hover:text-terracotta transition-colors">
               Unidades
             </a>
-            <a
-              href="#planos"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
+            <a href="#planos" className="hover:text-terracotta transition-colors">
               Planos
             </a>
           </nav>
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
+
+          <div className="flex items-center gap-5">
             <a
               href="https://www.instagram.com/elevestudiopilates/"
               target="_blank"
               rel="noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors hidden sm:block"
+              className="hover:text-terracotta transition-colors hidden sm:block"
             >
               <Instagram className="w-5 h-5" />
             </a>
@@ -76,7 +91,7 @@ export default function Layout() {
               href="https://wa.me/5541988741221"
               target="_blank"
               rel="noreferrer"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium tracking-wide flex items-center gap-2 transition-all shadow-[0_0_15px_rgba(234,88,12,0.3)] hover:shadow-[0_0_25px_rgba(234,88,12,0.5)]"
+              className="bg-terracotta hover:bg-[#A85525] text-white px-6 py-3 rounded-none text-xs uppercase tracking-[0.1em] font-medium flex items-center gap-2 transition-all hover:-translate-y-0.5"
             >
               <MessageCircle className="w-4 h-4" />
               <span className="hidden sm:inline">Contato</span>
@@ -89,46 +104,47 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer className="bg-muted/30 border-t py-12 mt-20">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left flex flex-col items-center md:items-start">
-            <div className="flex items-center gap-2 mb-3">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-primary"
-              >
-                <path
-                  d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M16 7L6 12.5V19.5L16 25L26 19.5V12.5L16 7Z"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinejoin="round"
-                  strokeDasharray="2 2"
-                  opacity="0.7"
-                />
-                <circle cx="16" cy="16" r="3" fill="currentColor" />
-              </svg>
-              <h2 className="text-2xl font-light tracking-widest text-primary">ELEVE</h2>
-            </div>
-            <p className="text-muted-foreground text-sm font-light">
-              Pilates e Performance para uma vida com mais qualidade.
+      <footer className="bg-moss text-beige py-20 border-t border-moss/80">
+        <div className="container mx-auto px-4 flex flex-col items-center text-center gap-8">
+          <svg
+            width="56"
+            height="56"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-terracotta opacity-80"
+          >
+            <path
+              d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M16 7L6 12.5V19.5L16 25L26 19.5V12.5L16 7Z"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+              strokeDasharray="2 2"
+              opacity="0.7"
+            />
+            <circle cx="16" cy="16" r="3" fill="currentColor" />
+          </svg>
+
+          <div className="max-w-md">
+            <h2 className="text-3xl font-serif mb-4">ELEVE</h2>
+            <p className="text-beige/70 font-light text-sm leading-relaxed">
+              Transforme seu corpo e sua mente com cuidado, intenção e método. O movimento como
+              forma de cuidar de você.
             </p>
           </div>
-          <div className="flex gap-4">
+
+          <div className="flex gap-6 mt-4">
             <a
               href="https://www.instagram.com/elevestudiopilates/"
               target="_blank"
               rel="noreferrer"
-              className="p-3 bg-background border rounded-full hover:border-primary hover:text-primary text-muted-foreground transition-colors"
+              className="p-3 bg-beige/5 rounded-full hover:bg-terracotta text-beige transition-all duration-300"
             >
               <Instagram className="w-5 h-5" />
             </a>
@@ -136,14 +152,17 @@ export default function Layout() {
               href="https://wa.me/5541988741221"
               target="_blank"
               rel="noreferrer"
-              className="p-3 bg-background border rounded-full hover:border-primary hover:text-primary text-muted-foreground transition-colors"
+              className="p-3 bg-beige/5 rounded-full hover:bg-terracotta text-beige transition-all duration-300"
             >
               <MessageCircle className="w-5 h-5" />
             </a>
           </div>
-        </div>
-        <div className="container mx-auto px-4 mt-8 pt-8 border-t text-center text-muted-foreground font-light text-xs">
-          © {new Date().getFullYear()} ELEVE Pilates e Performance. Todos os direitos reservados.
+
+          <div className="w-full h-px bg-beige/10 mt-8" />
+
+          <div className="text-beige/50 font-light text-xs tracking-wider uppercase">
+            © {new Date().getFullYear()} ELEVE Pilates e Performance. Todos os direitos reservados.
+          </div>
         </div>
       </footer>
     </div>

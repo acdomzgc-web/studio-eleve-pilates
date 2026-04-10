@@ -1,68 +1,76 @@
 import { Heart, Target, Brain } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
 
 const PILLARS = [
   {
     title: 'Cuidado',
     icon: Heart,
-    description: 'Antes de cada aula, existe conversa, troca e alinhamento.',
-    delay: 100,
+    description:
+      'Antes de cada aula, existe conversa, troca e alinhamento. Entendemos suas necessidades únicas.',
   },
   {
     title: 'Intenção',
     icon: Target,
-    description: 'Porque aqui cada movimento tem intenção e cada aluno merece atenção de verdade.',
-    delay: 300,
+    description:
+      'Porque aqui cada movimento tem intenção e cada aluno merece atenção de verdade e resultados reais.',
   },
   {
     title: 'Conhecimento',
     icon: Brain,
     description:
       'É assim que a gente constrói as aulas da ELEVE: com cuidado e conhecimento de quem acredita no poder do movimento.',
-    delay: 500,
   },
 ]
 
 export function Methodology() {
   return (
-    <section id="essencia" className="py-24 bg-background border-t border-border/50">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in-up">
-          <span className="text-primary tracking-[0.2em] text-sm font-medium mb-4 block uppercase">
-            Metodologia
-          </span>
-          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4 uppercase">
+    <section id="metodo" className="py-24 md:py-32 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="mb-16 md:mb-24 flex flex-col items-center text-center max-w-2xl mx-auto">
+          <span className="text-terracotta tracking-[0.2em] text-xs font-medium mb-4 block uppercase animate-fade-in-up">
             Nossa Essência
+          </span>
+          <h2
+            className="text-4xl md:text-5xl font-serif text-dark-brown mb-6 animate-fade-in-up"
+            style={{ animationDelay: '100ms' }}
+          >
+            O Método Eleve
           </h2>
-          <p className="text-lg text-muted-foreground font-light">
-            Três pilares fundamentais que guiam nossa prática diária e garantem resultados reais e
-            duradouros.
-          </p>
+          <div
+            className="w-12 h-px bg-terracotta animate-fade-in-up"
+            style={{ animationDelay: '200ms' }}
+          />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {PILLARS.map((pillar) => (
-            <div
-              key={pillar.title}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${pillar.delay}ms` }}
-            >
-              <Card className="border border-border/50 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 h-full bg-card group relative overflow-hidden rounded-3xl">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-primary/10 transition-colors" />
-                <CardContent className="p-10 flex flex-col items-center text-center h-full relative z-10">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                    <pillar.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-medium tracking-wide text-foreground mb-4">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-muted-foreground font-light leading-relaxed flex-1">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch">
+          {/* Left - Supporting Photo */}
+          <div className="w-full lg:w-5/12 h-[400px] lg:h-auto relative overflow-hidden group shadow-lg animate-fade-in-up">
+            <img
+              src="https://img.usecurling.com/p/800/1000?q=woman%20pilates%20apparatus"
+              alt="Clara no aparelho de Pilates"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            />
+          </div>
+
+          {/* Right - Horizontal Cards */}
+          <div className="w-full lg:w-7/12 flex flex-col justify-center gap-6">
+            {PILLARS.map((pillar, index) => (
+              <div
+                key={pillar.title}
+                className="group flex flex-col sm:flex-row items-start gap-6 p-8 bg-beige/30 hover:bg-beige transition-colors duration-500 border border-transparent hover:border-beige/50 hover:shadow-xl animate-fade-in-up"
+                style={{ animationDelay: `${(index + 2) * 150}ms` }}
+              >
+                <div className="w-14 h-14 shrink-0 rounded-none bg-white flex items-center justify-center border border-terracotta/20 group-hover:border-terracotta transition-colors duration-500">
+                  <pillar.icon className="w-6 h-6 text-terracotta" strokeWidth={1.5} />
+                </div>
+                <div className="space-y-3">
+                  <h3 className="text-2xl font-serif text-dark-brown">{pillar.title}</h3>
+                  <p className="text-dark-brown/70 font-light leading-relaxed">
                     {pillar.description}
                   </p>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
