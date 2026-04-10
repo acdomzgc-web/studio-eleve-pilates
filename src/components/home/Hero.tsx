@@ -8,20 +8,20 @@ export default function Hero() {
 
       <div className="container relative z-20 px-4 flex flex-col items-center text-center max-w-4xl mx-auto">
         <span className="text-primary tracking-[0.3em] text-sm md:text-base mb-6 font-medium animate-fade-in-up uppercase">
-          Estúdio de Pilates
+          Excelência em Movimento
         </span>
         <h1
-          className="text-5xl md:text-7xl font-light tracking-tight mb-8 leading-tight animate-fade-in-up text-foreground"
+          className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight animate-fade-in-up text-foreground"
           style={{ animationDelay: '100ms' }}
         >
-          O movimento como forma de <span className="text-primary italic">cuidar de você.</span>
+          ELEVE PILATES E PERFORMANCE
         </h1>
         <p
           className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl font-light leading-relaxed animate-fade-in-up"
           style={{ animationDelay: '200ms' }}
         >
           Mais do que ensinar exercícios, ajudamos pessoas a viverem com menos dor, mais consciência
-          corporal e mais qualidade de vida.
+          corporal e mais qualidade de vida. O movimento como forma de cuidar de você.
         </p>
 
         <div

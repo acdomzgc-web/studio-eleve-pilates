@@ -1,5 +1,6 @@
 import Hero from '@/components/home/Hero'
 import History from '@/components/home/History'
+import { Methodology } from '@/components/home/Methodology'
 import Services from '@/components/home/Services'
 import Benefits from '@/components/home/Benefits'
 import Location from '@/components/home/Location'
@@ -13,6 +14,7 @@ export default function Index() {
     <div className="flex flex-col gap-24 pb-12">
       <Hero />
       <History />
+      <Methodology />
       <Metrics />
       <Services />
       <Benefits />

@@ -89,7 +89,7 @@ export default function Plans() {
                 className={`w-full flex items-center justify-center gap-2 py-4 rounded-full text-sm font-medium tracking-wide transition-all ${
                   plan.highlight
                     ? 'bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg'
-                    : 'bg-secondary hover:bg-secondary/80 text-secondary-foreground border border-border'
+                    : 'bg-transparent hover:bg-secondary text-foreground border border-border'
                 }`}
               >
                 Consultar Valores

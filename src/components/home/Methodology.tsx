@@ -25,12 +25,18 @@ const PILLARS = [
 
 export function Methodology() {
   return (
-    <section id="metodo" className="py-24 bg-background">
+    <section id="essencia" className="py-24 bg-background border-t border-border/50">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">O Método Eleve</h2>
-          <p className="text-lg text-muted-foreground">
-            Três pilares fundamentais que guiam nossa prática diária e garantem resultados reais.
+          <span className="text-primary tracking-[0.2em] text-sm font-medium mb-4 block uppercase">
+            Metodologia
+          </span>
+          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4 uppercase">
+            Nossa Essência
+          </h2>
+          <p className="text-lg text-muted-foreground font-light">
+            Três pilares fundamentais que guiam nossa prática diária e garantem resultados reais e
+            duradouros.
           </p>
         </div>
 
@@ -41,13 +47,16 @@ export function Methodology() {
               className="animate-fade-in-up"
               style={{ animationDelay: `${pillar.delay}ms` }}
             >
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-card group">
-                <CardContent className="p-8 flex flex-col items-center text-center h-full">
-                  <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Card className="border border-border/50 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 h-full bg-card group relative overflow-hidden rounded-3xl">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-primary/10 transition-colors" />
+                <CardContent className="p-10 flex flex-col items-center text-center h-full relative z-10">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                     <pillar.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">{pillar.title}</h3>
-                  <p className="text-muted-foreground font-medium leading-relaxed flex-1">
+                  <h3 className="text-2xl font-medium tracking-wide text-foreground mb-4">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-muted-foreground font-light leading-relaxed flex-1">
                     {pillar.description}
                   </p>
                 </CardContent>

@@ -24,27 +24,34 @@ export default function Metrics() {
   ]
 
   return (
-    <section className="py-16 bg-muted/30 border-y border-border relative overflow-hidden">
+    <section className="py-20 bg-background border-y border-border relative overflow-hidden">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {metrics.map((metric, i) => (
             <Card
               key={i}
-              className="bg-background/60 backdrop-blur-md border-border/50 hover:border-primary/30 transition-all duration-300"
+              className="bg-card border border-border/50 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 rounded-3xl group"
             >
-              <CardContent className="p-8 flex flex-col items-center text-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-2xl mb-2">
-                  <metric.icon className="w-8 h-8 text-primary" />
+              <CardContent className="p-10 flex flex-col items-center text-center space-y-6">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full" />
+                  <div className="relative p-4 bg-background border border-primary/20 rounded-full group-hover:scale-110 transition-transform duration-500">
+                    <metric.icon className="w-8 h-8 text-primary" />
+                  </div>
                 </div>
-                <h3 className="text-5xl font-light text-foreground">{metric.value}</h3>
                 <div>
-                  <p className="text-foreground tracking-widest uppercase text-sm font-medium mb-1">
+                  <h3 className="text-6xl font-light text-foreground mb-4 tracking-tighter">
+                    {metric.value}
+                  </h3>
+                  <p className="text-foreground tracking-widest uppercase text-sm font-medium mb-2">
                     {metric.label}
                   </p>
-                  <p className="text-muted-foreground font-light text-xs">{metric.description}</p>
+                  <p className="text-muted-foreground font-light text-sm max-w-[200px] mx-auto leading-relaxed">
+                    {metric.description}
+                  </p>
                 </div>
               </CardContent>
             </Card>

@@ -17,9 +17,9 @@ export default function Benefits() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden group border border-border/50 shadow-2xl">
             <img
-              src="https://img.usecurling.com/p/800/1000?q=woman%20pilates%20instructor%20gym&color=orange"
+              src="https://img.usecurling.com/p/800/1000?q=pilates%20instructor%20woman%20smiling&color=orange"
               alt="Clara Freitas - Fundadora e Instrutora de Pilates"
-              className="object-cover w-full h-full opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-1000"
+              className="object-cover w-full h-full group-hover:scale-105 transition-all duration-1000"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
