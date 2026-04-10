@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { FadeIn } from '@/components/ui/fade-in'
 
 export default function FAQ() {
   const faqs = [
@@ -25,7 +26,7 @@ export default function FAQ() {
     {
       question: 'Meu plano permite que eu frequente as duas unidades?',
       answer:
-        'Os planos são específicos para cada unidade (Matriz ou República) devido às particularidades estruturais de cada espaço. Recomendamos escolher a unidade mais conveniente para a sua rotina, mas nossa equipe está sempre à disposição para analisar casos especiais.',
+        'Os planos são específicos para cada unidade (Santo Inácio ou República) devido às particularidades estruturais de cada espaço. Recomendamos escolher a unidade mais conveniente para a sua rotina, mas nossa equipe está sempre à disposição para analisar casos especiais.',
     },
     {
       question: 'Como faço para agendar minha primeira aula e conhecer o espaço?',
@@ -35,32 +36,37 @@ export default function FAQ() {
   ]
 
   return (
-    <section className="container mx-auto px-4 max-w-3xl mb-24 mt-10">
-      <div className="text-center space-y-4 mb-12">
-        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-          Dúvidas Frequentes
-        </h2>
-        <p className="text-muted-foreground font-light">
-          Encontre respostas rápidas para as principais perguntas dos nossos alunos.
-        </p>
-      </div>
+    <section className="bg-beige py-32">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <FadeIn className="text-center space-y-4 mb-20">
+          <span className="text-terracotta tracking-[0.2em] text-xs font-bold mb-4 block uppercase">
+            FAQ
+          </span>
+          <h2 className="text-4xl md:text-5xl font-serif text-dark-brown">Dúvidas Frequentes</h2>
+          <p className="text-dark-brown/70 font-light text-lg">
+            Encontre respostas rápidas para as principais perguntas dos nossos alunos.
+          </p>
+        </FadeIn>
 
-      <Accordion type="single" collapsible className="w-full space-y-4">
-        {faqs.map((faq, index) => (
-          <AccordionItem
-            key={index}
-            value={`item-${index}`}
-            className="bg-card border border-border rounded-2xl px-6 data-[state=open]:border-primary/30 transition-colors shadow-sm"
-          >
-            <AccordionTrigger className="text-foreground hover:text-primary font-medium py-6 text-left text-lg">
-              {faq.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground font-light leading-relaxed pb-6 text-base">
-              {faq.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+        <FadeIn delay={200}>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-transparent border-b border-terracotta/20 px-0 py-4 data-[state=open]:border-terracotta transition-colors shadow-none"
+              >
+                <AccordionTrigger className="text-dark-brown hover:text-terracotta font-serif py-4 text-left text-xl md:text-2xl">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-dark-brown/70 font-light leading-relaxed pb-6 text-base md:text-lg pr-12">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </FadeIn>
+      </div>
     </section>
   )
 }

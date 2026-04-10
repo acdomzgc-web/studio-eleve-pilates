@@ -1,4 +1,6 @@
 import { Check } from 'lucide-react'
+import matrizImg from '@/assets/eleve-matriz-b0441.jpeg'
+import { FadeIn } from '@/components/ui/fade-in'
 
 export default function Benefits() {
   const benefits = [
@@ -11,53 +13,51 @@ export default function Benefits() {
   ]
 
   return (
-    <section className="bg-muted/10 py-24 relative">
-      <div className="absolute top-1/2 left-0 w-full h-1/2 bg-gradient-to-b from-transparent to-muted/20 pointer-events-none" />
+    <section id="sobre" className="bg-beige py-32 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden group border border-border/50 shadow-2xl">
-            <img
-              src="https://img.usecurling.com/p/800/1000?q=pilates%20instructor%20woman%20smiling&color=orange"
-              alt="Clara Freitas - Fundadora e Instrutora de Pilates"
-              className="object-cover w-full h-full group-hover:scale-105 transition-all duration-1000"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="backdrop-blur-md bg-background/60 border border-border/50 p-5 rounded-2xl shadow-lg">
-                <p className="text-foreground font-medium text-lg">Clara Freitas</p>
-                <p className="text-primary text-sm tracking-wide uppercase mt-1">
+        <div className="flex flex-col md:flex-row gap-16 lg:gap-24 items-center">
+          <FadeIn direction="right" className="w-full md:w-[55%] space-y-10">
+            <div>
+              <span className="text-terracotta tracking-[0.2em] text-xs font-bold mb-4 block uppercase">
+                Por que escolher Pilates
+              </span>
+              <h2 className="text-4xl md:text-5xl font-serif text-dark-brown mb-6 leading-tight">
+                Qualidade de vida através do movimento consciente
+              </h2>
+              <p className="text-dark-brown/70 font-light text-lg leading-relaxed">
+                Na ELEVE, enxergamos o Pilates como uma reeducação completa do corpo. Nossa
+                metodologia alia precisão, controle e cuidado para garantir resultados que
+                transformam a sua rotina e elevam a sua performance diária.
+              </p>
+            </div>
+
+            <ul className="space-y-5">
+              {benefits.map((benefit, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <div className="w-6 h-6 rounded-full bg-terracotta/10 flex items-center justify-center shrink-0 mt-1">
+                    <Check className="w-3.5 h-3.5 text-terracotta" strokeWidth={3} />
+                  </div>
+                  <span className="text-dark-brown/80 font-light text-lg">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </FadeIn>
+
+          <FadeIn direction="left" className="w-full md:w-[45%]">
+            <div className="relative">
+              <img
+                src={matrizImg}
+                alt="Studio Eleve Pilates"
+                className="w-full aspect-[4/5] object-cover rounded-[16px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.2)]"
+              />
+              <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-[16px] shadow-xl border border-beige max-w-[240px] hidden md:block">
+                <p className="text-dark-brown font-serif text-xl mb-1">Clara Freitas</p>
+                <p className="text-terracotta text-xs tracking-widest uppercase font-bold">
                   Fundadora & Especialista
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="space-y-8">
-            <div>
-              <span className="text-primary tracking-[0.2em] text-sm font-medium mb-4 block uppercase">
-                Benefícios do Pilates
-              </span>
-              <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-6 leading-tight">
-                Qualidade de vida através do movimento consciente
-              </h2>
-              <p className="text-muted-foreground font-light text-lg leading-relaxed">
-                Na ELEVE, enxergamos o Pilates como uma reeducação completa do corpo. Nossa
-                metodologia alia precisão, controle e cuidado para garantir resultados que
-                transformam a sua rotina.
-              </p>
-            </div>
-
-            <ul className="space-y-5 pt-4">
-              {benefits.map((benefit, i) => (
-                <li key={i} className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-primary" />
-                  </div>
-                  <span className="text-foreground/80 font-light">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

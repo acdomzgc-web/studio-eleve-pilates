@@ -7,7 +7,7 @@ import Location from '@/components/home/Location'
 import Plans from '@/components/home/Plans'
 import Founder from '@/components/home/Founder'
 import FAQ from '@/components/home/FAQ'
-import Metrics from '@/components/home/Metrics'
+import { InstagramGallery } from '@/components/home/InstagramGallery'
 import QuoteSection from '@/components/home/QuoteSection'
 
 export default function Index() {
@@ -17,7 +17,7 @@ export default function Index() {
       <Founder />
       <QuoteSection />
       <Methodology />
-      <Metrics />
+      <InstagramGallery />
       <History />
       <Services />
       <Benefits />

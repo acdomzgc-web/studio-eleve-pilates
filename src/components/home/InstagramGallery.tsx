@@ -1,93 +1,84 @@
-import { Instagram, Users, MapPin, Heart } from 'lucide-react'
+import { Instagram } from 'lucide-react'
+import { FadeIn } from '@/components/ui/fade-in'
+import matrizImg from '@/assets/eleve-matriz-b0441.jpeg'
 
 export function InstagramGallery() {
   return (
-    <section id="comunidade" className="py-24 bg-background">
+    <section id="comunidade" className="py-32 bg-white">
       <div className="container mx-auto px-4">
+        <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24 text-center max-w-4xl mx-auto">
+          <div>
+            <h3 className="text-5xl md:text-6xl font-serif text-dark-brown mb-3">5.4k+</h3>
+            <p className="text-terracotta uppercase tracking-[0.2em] text-xs font-bold">
+              Seguidores
+            </p>
+          </div>
+          <div className="hidden md:block w-px h-16 bg-beige mx-auto my-auto" />
+          <div className="md:hidden w-16 h-px bg-beige mx-auto" />
+          <div>
+            <h3 className="text-5xl md:text-6xl font-serif text-dark-brown mb-3">2</h3>
+            <p className="text-terracotta uppercase tracking-[0.2em] text-xs font-bold">Unidades</p>
+          </div>
+          <div className="hidden md:block w-px h-16 bg-beige mx-auto my-auto" />
+          <div className="md:hidden w-16 h-px bg-beige mx-auto" />
+          <div>
+            <h3 className="text-5xl md:text-6xl font-serif text-dark-brown mb-3">100%</h3>
+            <p className="text-terracotta uppercase tracking-[0.2em] text-xs font-bold">
+              Renovação
+            </p>
+          </div>
+        </FadeIn>
+
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Nossa <span className="text-primary">Comunidade</span>
-          </h2>
-          <p className="text-lg text-muted-foreground font-medium">
-            Faça parte da família Eleve e acompanhe nosso dia a dia focado em saúde e bem-estar.
-          </p>
+          <FadeIn>
+            <h2 className="text-4xl md:text-5xl font-serif text-dark-brown mb-6">
+              Nossa Comunidade
+            </h2>
+            <p className="text-lg text-dark-brown/70 font-light">
+              Faça parte da família Eleve e acompanhe nosso dia a dia focado em saúde, movimento e
+              bem-estar.
+            </p>
+          </FadeIn>
         </div>
 
-        {/* Dashboard Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div className="bg-card p-8 rounded-2xl shadow-sm border border-border/50 text-center flex flex-col items-center justify-center transform transition-transform duration-300 hover:-translate-y-2">
-            <div className="w-14 h-14 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-4">
-              <Users className="w-7 h-7" />
-            </div>
-            <h3 className="text-4xl font-bold text-foreground mb-2">5.4k+</h3>
-            <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
-              Número de Seguidores
-            </p>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          {[
+            matrizImg,
+            'https://img.usecurling.com/p/800/800?q=pilates%20stretching&color=orange',
+            'https://img.usecurling.com/p/800/800?q=pilates%20reformer&color=black',
+            'https://img.usecurling.com/p/800/800?q=pilates%20exercise&color=orange',
+          ].map((imgUrl, i) => (
+            <FadeIn key={i} delay={i * 100}>
+              <a
+                href="https://www.instagram.com/elevestudiopilates/"
+                target="_blank"
+                rel="noreferrer"
+                className="block aspect-square relative group overflow-hidden rounded-[16px]"
+              >
+                <img
+                  src={imgUrl}
+                  alt="Studio Activity"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-terracotta/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Instagram className="text-white w-10 h-10" />
+                </div>
+              </a>
+            </FadeIn>
+          ))}
+        </div>
 
-          <div className="bg-card p-8 rounded-2xl shadow-sm border border-border/50 text-center flex flex-col items-center justify-center transform transition-transform duration-300 hover:-translate-y-2">
-            <div className="w-14 h-14 bg-secondary/20 text-secondary-foreground rounded-full flex items-center justify-center mb-4">
-              <MapPin className="w-7 h-7" />
-            </div>
-            <h3 className="text-4xl font-bold text-foreground mb-2">2</h3>
-            <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
-              Número de Unidades
-            </p>
-          </div>
-
-          <div className="bg-card p-8 rounded-2xl shadow-sm border border-border/50 text-center flex flex-col items-center justify-center transform transition-transform duration-300 hover:-translate-y-2">
-            <div className="w-14 h-14 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-4">
-              <Heart className="w-7 h-7" />
-            </div>
-            <h3 className="text-4xl font-bold text-foreground mb-2">100%</h3>
-            <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
-              Dedicação
-            </p>
-          </div>
-
+        <FadeIn className="text-center">
           <a
             href="https://www.instagram.com/elevestudiopilates/"
             target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-br from-primary to-[#8c3310] p-8 rounded-2xl shadow-md text-center flex flex-col items-center justify-center text-white transform transition-transform duration-300 hover:-translate-y-2 group"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center h-14 px-10 bg-terracotta text-white tracking-[0.15em] font-bold rounded-none hover:bg-terracotta/90 transition-all uppercase text-xs gap-3 hover:-translate-y-1 shadow-lg"
           >
-            <Instagram className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-xl font-bold mb-2">@elevestudiopilates</h3>
-            <p className="text-sm font-medium opacity-90">Siga no Instagram</p>
+            <Instagram className="w-4 h-4" />
+            Seguir no Instagram
           </a>
-        </div>
-
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="aspect-square rounded-2xl overflow-hidden group">
-            <img
-              src="https://img.usecurling.com/p/400/400?q=pilates%20studio"
-              alt="Pilates Studio"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-          </div>
-          <div className="aspect-square rounded-2xl overflow-hidden group">
-            <img
-              src="https://img.usecurling.com/p/400/400?q=pilates%20stretching"
-              alt="Pilates Stretching"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-          </div>
-          <div className="aspect-square rounded-2xl overflow-hidden group">
-            <img
-              src="https://img.usecurling.com/p/400/400?q=pilates%20reformer"
-              alt="Pilates Reformer"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-          </div>
-          <div className="aspect-square rounded-2xl overflow-hidden group">
-            <img
-              src="https://img.usecurling.com/p/400/400?q=pilates%20exercise"
-              alt="Pilates Exercise"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-          </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   )

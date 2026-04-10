@@ -1,92 +1,77 @@
-import { MapPin, Phone, Instagram, MessageCircle } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+import { MapPin } from 'lucide-react'
+import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import matrizImage from '@/assets/eleve-matriz-91647.jpeg'
-import republicaImage from '@/assets/eleve-republica-e0c20.jpeg'
+import { FadeIn } from '@/components/ui/fade-in'
+import republicaImage from '@/assets/eleve-republica-ac91d.jpeg'
+import matrizImage from '@/assets/eleve-matriz-b0441.jpeg'
 
 const locations = [
   {
     id: 'matriz',
-    name: 'High Pulse Matriz',
+    name: 'Santo Inácio',
     image: matrizImage,
     address: 'Rodovia Curitiba - Ponta Grossa Br-277, 2658',
-    phone: '(41) 98874-1221',
-    instagram: '@elevestudiopilates',
-    whatsapp: '5541988741221',
+    mapUrl: 'https://maps.app.goo.gl/placeholder1', // Would be replaced with real maps link
   },
   {
     id: 'republica',
-    name: 'High Pulse República',
+    name: 'República',
     image: republicaImage,
     address: 'Rua Deputado Waldemiro Pedroso, 201',
-    phone: '(41) 98874-1221',
-    instagram: '@elevestudiopilates',
-    whatsapp: '5541988741221',
+    mapUrl: 'https://maps.app.goo.gl/placeholder2',
   },
 ]
 
-export function Location() {
+export default function Location() {
   return (
-    <section id="unidades" className="py-20 bg-background">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl font-light tracking-wide sm:text-4xl text-foreground">
-            Nossas Unidades
-          </h2>
-          <p className="text-muted-foreground font-light text-lg max-w-[600px] mx-auto">
-            Encontre a unidade mais próxima de você e venha nos fazer uma visita.
+    <section id="unidades" className="py-32 bg-beige">
+      <div className="container px-4 mx-auto max-w-6xl">
+        <FadeIn className="text-center space-y-4 mb-20">
+          <span className="text-terracotta tracking-[0.2em] text-xs font-bold mb-4 block uppercase">
+            Presencial
+          </span>
+          <h2 className="text-4xl md:text-5xl font-serif text-dark-brown">Nossas Unidades</h2>
+          <p className="text-dark-brown/70 font-light text-lg max-w-[600px] mx-auto">
+            Estruturas completas e sofisticadas preparadas para receber você com excelência.
           </p>
-        </div>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {locations.map((loc) => (
-            <Card key={loc.id} className="overflow-hidden border-border bg-card shadow-sm group">
-              <div className="aspect-[16/10] w-full overflow-hidden relative">
-                <img
-                  src={loc.image}
-                  alt={loc.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <CardContent className="p-8 space-y-6">
-                <h3 className="text-2xl font-light text-foreground">{loc.name}</h3>
-                <div className="space-y-4 text-muted-foreground font-light">
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-primary shrink-0" />
-                    <span>{loc.address}</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-primary shrink-0" />
-                    <span>{loc.phone}</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Instagram className="h-5 w-5 text-primary shrink-0" />
-                    <span>{loc.instagram}</span>
+          {locations.map((loc, i) => (
+            <FadeIn key={loc.id} delay={i * 200}>
+              <Card className="overflow-hidden border-none bg-transparent shadow-none group">
+                <div className="aspect-[4/3] w-full overflow-hidden relative rounded-[16px]">
+                  <img
+                    src={loc.image}
+                    alt={loc.name}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-moss/90 via-moss/20 to-transparent opacity-90" />
+                  <div className="absolute bottom-8 left-8 right-8 text-white">
+                    <h3 className="text-3xl font-serif mb-3">{loc.name}</h3>
+                    <p className="font-light text-sm opacity-90 flex items-center gap-3">
+                      <MapPin className="w-4 h-4 text-terracotta shrink-0" />
+                      {loc.address}
+                    </p>
                   </div>
                 </div>
 
-                <div className="pt-4">
+                <div className="mt-6">
                   <Button
-                    className="w-full gap-2 text-base h-12 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full font-medium"
+                    variant="outline"
+                    className="w-full border-terracotta text-terracotta hover:bg-terracotta hover:text-white rounded-none tracking-[0.2em] uppercase text-xs h-14 font-bold transition-all duration-300"
                     asChild
                   >
-                    <a
-                      href={`https://wa.me/${loc.whatsapp}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MessageCircle className="h-5 w-5" />
-                      Agendar Aula
+                    <a href={loc.mapUrl} target="_blank" rel="noopener noreferrer">
+                      Como chegar
                     </a>
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
+              </Card>
+            </FadeIn>
           ))}
         </div>
       </div>
     </section>
   )
 }
-
-export default Location
