@@ -7,11 +7,35 @@ export default function Layout() {
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 flex flex-col">
       <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-3 group">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-primary transition-transform group-hover:scale-105"
+            >
+              <path
+                d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M16 7L6 12.5V19.5L16 25L26 19.5V12.5L16 7Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinejoin="round"
+                strokeDasharray="2 2"
+                opacity="0.7"
+              />
+              <circle cx="16" cy="16" r="3" fill="currentColor" />
+            </svg>
             <span className="text-2xl font-light tracking-widest text-primary group-hover:text-primary/80 transition-colors">
               ELEVE
             </span>
-            <span className="text-sm font-light tracking-widest hidden sm:inline-block border-l border-border pl-2 ml-2 text-muted-foreground">
+            <span className="text-sm font-light tracking-widest hidden sm:inline-block border-l border-border pl-3 ml-1 text-muted-foreground">
               PILATES E PERFORMANCE
             </span>
           </Link>
@@ -67,8 +91,34 @@ export default function Layout() {
 
       <footer className="bg-muted/30 border-t py-12 mt-20">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl font-light tracking-widest text-primary mb-2">ELEVE</h2>
+          <div className="text-center md:text-left flex flex-col items-center md:items-start">
+            <div className="flex items-center gap-2 mb-3">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-primary"
+              >
+                <path
+                  d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M16 7L6 12.5V19.5L16 25L26 19.5V12.5L16 7Z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                  strokeDasharray="2 2"
+                  opacity="0.7"
+                />
+                <circle cx="16" cy="16" r="3" fill="currentColor" />
+              </svg>
+              <h2 className="text-2xl font-light tracking-widest text-primary">ELEVE</h2>
+            </div>
             <p className="text-muted-foreground text-sm font-light">
               Pilates e Performance para uma vida com mais qualidade.
             </p>
