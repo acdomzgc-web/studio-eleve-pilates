@@ -56,7 +56,7 @@ export default function FAQ() {
                 value={`item-${index}`}
                 className="bg-transparent border-b border-terracotta/20 px-0 py-4 data-[state=open]:border-terracotta transition-colors shadow-none"
               >
-                <AccordionTrigger className="text-dark-brown hover:text-terracotta font-serif py-4 text-left text-xl md:text-2xl">
+                <AccordionTrigger className="text-dark-brown hover:text-terracotta font-serif py-4 text-left text-xl md:text-2xl [&>svg]:text-terracotta">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-dark-brown/70 font-light leading-relaxed pb-6 text-base md:text-lg pr-12">

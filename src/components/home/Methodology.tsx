@@ -44,7 +44,7 @@ export function Methodology() {
           <FadeIn direction="right" className="w-full lg:w-5/12 relative">
             <div className="w-full h-[500px] lg:h-full relative overflow-hidden rounded-[16px] shadow-2xl group">
               <img
-                src="https://img.usecurling.com/p/800/1000?q=woman%20pilates%20apparatus&color=orange"
+                src="https://img.usecurling.com/p/800/1000?q=woman%20pilates%20equipment%20close-up"
                 alt="Clara no aparelho de Pilates"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />

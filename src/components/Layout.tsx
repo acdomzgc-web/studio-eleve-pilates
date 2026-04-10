@@ -30,7 +30,7 @@ export default function Layout() {
               alt="Eleve Logo"
               className={cn(
                 'transition-all duration-500 group-hover:scale-105 object-contain',
-                isScrolled ? 'w-10 h-10 brightness-0 invert' : 'w-12 h-12',
+                isScrolled ? 'w-10 h-10' : 'w-12 h-12',
               )}
             />
             <div className="flex flex-col">
@@ -92,11 +92,7 @@ export default function Layout() {
       <footer className="bg-moss text-white py-24 border-t-0">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center mb-20">
-            <img
-              src={logoImg}
-              alt="Eleve Logo"
-              className="w-40 h-40 object-contain opacity-90 brightness-0 invert"
-            />
+            <img src={logoImg} alt="Eleve Logo" className="w-40 h-40 object-contain opacity-90" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 text-center md:text-left mb-20 max-w-5xl mx-auto">
@@ -157,7 +153,7 @@ export default function Layout() {
                   href="https://www.instagram.com/elevestudiopilates/"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-terracotta hover:border-terracotta transition-all duration-300"
+                  className="w-12 h-12 rounded-full border border-beige/40 flex items-center justify-center text-beige hover:bg-terracotta hover:border-terracotta hover:text-white transition-all duration-300"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
@@ -165,7 +161,7 @@ export default function Layout() {
                   href="https://wa.me/5541988741221"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-terracotta hover:border-terracotta transition-all duration-300"
+                  className="w-12 h-12 rounded-full border border-beige/40 flex items-center justify-center text-beige hover:bg-terracotta hover:border-terracotta hover:text-white transition-all duration-300"
                 >
                   <MessageCircle className="w-5 h-5" />
                 </a>
