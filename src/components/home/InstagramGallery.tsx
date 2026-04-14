@@ -1,6 +1,9 @@
 import { Instagram } from 'lucide-react'
 import { FadeIn } from '@/components/ui/fade-in'
 import matrizImg from '@/assets/eleve-matriz-b0441.jpeg'
+import img2 from '@/assets/whatsapp-image-2026-04-13-at-22.35.56-2-2895c.jpeg'
+import img3 from '@/assets/whatsapp-image-2026-04-13-at-22.35.56-1-94b28.jpeg'
+import img4 from '@/assets/whatsapp-image-2026-04-13-at-22.35.56-51b5c.jpeg'
 
 export function InstagramGallery() {
   return (
@@ -42,12 +45,7 @@ export function InstagramGallery() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-          {[
-            matrizImg,
-            'https://img.usecurling.com/p/800/800?q=pilates%20stretching&color=orange',
-            'https://img.usecurling.com/p/800/800?q=pilates%20reformer&color=black',
-            'https://img.usecurling.com/p/800/800?q=pilates%20exercise&color=orange',
-          ].map((imgUrl, i) => (
+          {[matrizImg, img2, img3, img4].map((imgUrl, i) => (
             <FadeIn key={i} delay={i * 100}>
               <a
                 href="https://www.instagram.com/elevestudiopilates/"
