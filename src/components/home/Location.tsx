@@ -1,6 +1,5 @@
 import { MapPin } from 'lucide-react'
 import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { FadeIn } from '@/components/ui/fade-in'
 import republicaImage from '@/assets/eleve-republica-ac91d.jpeg'
 import matrizImage from '@/assets/eleve-matriz-b0441.jpeg'
@@ -8,7 +7,7 @@ import matrizImage from '@/assets/eleve-matriz-b0441.jpeg'
 const locations = [
   {
     id: 'matriz',
-    name: 'Santo Inácio',
+    name: 'High Pulse Matriz',
     image: matrizImage,
     address: 'Rodovia Curitiba - Ponta Grossa Br-277, 2658',
     mapUrl:
@@ -16,7 +15,7 @@ const locations = [
   },
   {
     id: 'republica',
-    name: 'República',
+    name: 'High Pulse República',
     image: republicaImage,
     address: 'Rua Deputado Waldemiro Pedroso, 201',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rua+Deputado+Waldemiro+Pedroso,+201',
@@ -55,18 +54,6 @@ export default function Location() {
                       {loc.address}
                     </p>
                   </div>
-                </div>
-
-                <div className="mt-6">
-                  <Button
-                    variant="outline"
-                    className="w-full border-terracotta text-terracotta hover:bg-terracotta hover:text-white rounded-none tracking-[0.2em] uppercase text-xs h-14 font-bold transition-all duration-300"
-                    asChild
-                  >
-                    <a href={loc.mapUrl} target="_blank" rel="noopener noreferrer">
-                      Como chegar
-                    </a>
-                  </Button>
                 </div>
               </Card>
             </FadeIn>
