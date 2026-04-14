@@ -26,7 +26,7 @@ export default function Founder() {
       <div className="container px-4 mx-auto">
         <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
           {/* Left Column - Image 60% width */}
-          <div className="w-full lg:w-[60%] relative group sticky top-32">
+          <div className="w-full lg:w-[60%] relative group lg:sticky lg:top-32">
             <div className="relative aspect-[4/5] overflow-hidden rounded-none shadow-2xl">
               <img
                 src={founderImage}

@@ -11,14 +11,15 @@ const locations = [
     name: 'Santo Inácio',
     image: matrizImage,
     address: 'Rodovia Curitiba - Ponta Grossa Br-277, 2658',
-    mapUrl: 'https://maps.app.goo.gl/placeholder1', // Would be replaced with real maps link
+    mapUrl:
+      'https://www.google.com/maps/search/?api=1&query=Rodovia+Curitiba+-+Ponta+Grossa+Br-277,+2658',
   },
   {
     id: 'republica',
     name: 'República',
     image: republicaImage,
     address: 'Rua Deputado Waldemiro Pedroso, 201',
-    mapUrl: 'https://maps.app.goo.gl/placeholder2',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Rua+Deputado+Waldemiro+Pedroso,+201',
   },
 ]
 
