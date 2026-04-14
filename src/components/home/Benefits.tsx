@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react'
-import matrizImg from '@/assets/eleve-matriz-b0441.jpeg'
+import reformerClaraImg from '@/assets/reformer-clara-4b18c.webp'
 import { FadeIn } from '@/components/ui/fade-in'
 
 export default function Benefits() {
@@ -45,10 +45,11 @@ export default function Benefits() {
 
           <FadeIn direction="left" className="w-full md:w-[45%]">
             <div className="relative">
-              <img
-                src={matrizImg}
-                alt="Studio Eleve Pilates"
-                className="w-full aspect-[4/5] object-cover rounded-[16px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.2)]"
+              <div
+                className="w-full aspect-[4/5] bg-fixed bg-cover bg-center rounded-[16px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.2)]"
+                style={{ backgroundImage: `url(${reformerClaraImg})` }}
+                role="img"
+                aria-label="Studio Eleve Pilates"
               />
               <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-[16px] shadow-xl border border-beige max-w-[240px] hidden md:block">
                 <p className="text-dark-brown font-serif text-xl mb-1">Clara Freitas</p>
