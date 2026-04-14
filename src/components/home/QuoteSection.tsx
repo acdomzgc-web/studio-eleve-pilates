@@ -1,7 +1,12 @@
+import bgImage from '@/assets/whatsapp-image-2026-04-13-at-22.22.31-7d057.jpeg'
+
 export default function QuoteSection() {
   return (
     <section className="relative py-32 md:py-48 flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://img.usecurling.com/p/1920/1080?q=neon%20logo%20green%20wall')] bg-cover bg-center bg-fixed" />
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      />
       <div className="absolute inset-0 bg-moss/70" />
 
       <div className="container relative z-10 px-4 flex flex-col items-center text-center">
