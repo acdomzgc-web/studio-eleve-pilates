@@ -1,11 +1,14 @@
 import { ArrowRight } from 'lucide-react'
+import heroBg from '@/assets/whatsapp-image-2026-04-13-at-22.20.32-745d2.jpeg'
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('https://img.usecurling.com/p/1920/1080?q=woman%20smiling%20reformer%20industrial%20studio')] bg-cover bg-center bg-no-repeat" />
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
 
       {/* Moss-green overlay 60% */}
       <div className="absolute inset-0 bg-moss/60 z-10" />
